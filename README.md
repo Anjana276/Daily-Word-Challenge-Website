@@ -1,15 +1,33 @@
-Project Title:
-Daily Word Challenge Website
+#Daily Word Challenge Website
 
-Description:
-The main purpose of this website is to we can learn the use case and meanings of English words. As it contains levels that will be very comfortable any easy to use. You can also review the words you learnt reacently.
+# Description
 
-How to Install and Run:
+The Daily Word Challenge Website is a Django-based platform designed to help users learn the meanings and usage of English words through daily challenges. It features multiple levels for a comfortable learning experience and allows users to review words they've recently learned.
 
-1 Install python through browser
-2 You can verify the version using --> python --version
-3 create virtual environment --> python -m venv myenv\Scripts\activate (for windows)
-4 install Django --> pip install django
-5 create django project --> django-admin startproject <projectname> .(in my case it is word_challenge you can create your own)
-6 go to project directory --> cd <projectname>
-7 run the project --> python manage.py runserver
+## How to Install and Run
+
+1. Install Python  
+   Download and install Python from [https://www.python.org](https://www.python.org)
+
+2. Verify Python installation  
+   python --version
+
+3. Create a virtual environment
+   python -m venv myenv
+    myenv\Scripts\activate   # For Windows
+
+4 Install Django
+  pip install django
+
+5 Create django project
+  django-admin startproject word_challenge
+
+6 Navigate to Project directory
+  cd word_challenge
+
+7 Run the development server
+  python manage.py runserver
+
+8 Access the website
+  Open your browser and go to http://127.0.0.1:8000/
+
