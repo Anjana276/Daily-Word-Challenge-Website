@@ -1,0 +1,87 @@
+body.auth-bg {
+    background: linear-gradient(to bottom, #fad0c4, #dad0f0);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 320px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.tab-switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tab-switch a {
+    flex: 1;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+.tab-switch .active-tab {
+    background: linear-gradient(to right, #003973, #005AA7);
+    color: white;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.forgot-password {
+    font-size: 0.85rem;
+    text-align: left;
+    color: #005AA7;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.btn {
+    background: linear-gradient(to right, #003973, #005AA7);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #005AA7;
+    font-weight: 600;
+    text-decoration: none;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Time 🧠</title>
+    {%load static%}
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+        .submit-btn {
+            display: block;
+            margin: 0 auto;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Time 🧠</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="total" value="{{ total }}">
+        
+        {% for item in quiz_data %}
+            <div class="question-box">
+                <div class="question">
+                    {{ forloop.counter }}. What is the meaning of "<strong>{{ item.word }}</strong>"?
+                </div>
+                {% for option in item.options %}
+                    <div class="option">
+                        <label>
+                            <input type="radio" name="q{{ forloop.parentloop.counter }}" value="{{ option }}" required>
+                            {{ option }}
+                        </label>
+                    </div>
+                {% endfor %}
+                <input type="hidden" name="correct{{ forloop.counter }}" value="{{ item.correct }}">
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="submit-btn">Submit Quiz</button>
+    </form>
+</body>
+</html>

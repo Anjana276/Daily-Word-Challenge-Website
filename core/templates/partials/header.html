@@ -1,0 +1,24 @@
+{% load static %}
+<div class="header">
+    <img src="{% static 'image/logo.jpeg' %}" alt="Logo" class="logo">
+    <div class="title">Word Challenge</div>
+</div>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .logo {
+    height: 50px;
+  }
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+</style>

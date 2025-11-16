@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Level</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+        }
+
+        .header-container {
+            background-color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-container img {
+            height: 50px;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px); /* Adjust for header height */
+        }
+
+        .level-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header-container">
+        <img src="{% static 'image/logo.jpeg' %}" alt="Logo">
+        <div class="site-title">Word Challenge</div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="level-container">
+            <h2>Select Your Level</h2>
+            <form method="get" action="{% url 'daily_word' %}">
+                <label for="level"></label><br>
+                <select name="level" id="level">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="expert">Expert</option>
+                </select><br><br>
+                <button type="submit">Go</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

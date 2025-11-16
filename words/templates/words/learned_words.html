@@ -1,0 +1,33 @@
+{%load static%}
+<!-- templates/words/learned_words.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learned Words</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        h1{
+            text-align: center; 
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-10">
+    {% include "partials/header.html" %}
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6" >Your Learned Words</h1>
+        
+        {% for word in words %}
+            <div class="bg-white shadow-md rounded-lg p-5 mb-4">
+                <h2 class="text-xl font-semibold">{{ word.word }}</h2>
+                <p><strong>Definition:</strong> {{ word.definition }}</p>
+                {% if word.example %}
+                <p class="italic mt-1 text-gray-600">"{{ word.example }}"</p>
+                {% endif %}
+                <p class="text-sm text-gray-400 mt-2">Learned on {{ word.date_learned|date:"F j, Y, g:i a" }}</p>
+            </div>
+        {% empty %}
+            <p>You haven't learned any words yet.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
