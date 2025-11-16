@@ -16,18 +16,18 @@ The Daily Word Challenge Website is a Django-based platform designed to help use
    python -m venv myenv
     myenv\Scripts\activate   # For Windows
 
-4 Install Django
+4. Install Django
   pip install django
 
-5 Create django project
+5. Create django project
   django-admin startproject word_challenge
 
-6 Navigate to Project directory
+6. Navigate to Project directory
   cd word_challenge
 
-7 Run the development server
+7. Run the development server
   python manage.py runserver
 
-8 Access the website
+8. Access the website
   Open your browser and go to http://127.0.0.1:8000/
 
